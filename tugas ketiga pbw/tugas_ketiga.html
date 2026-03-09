@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>Cek Nilai Mahasiswa</title>
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: whitesmoke;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .card{
+                background-color: whitesmoke;
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+                width: 350px;
+                border: 2px whitesmoke;
+            }
+
+            h2{
+                text-align: center;
+                color: #1B4332;
+                margin-bottom: 20px;
+            }
+
+            label{
+                display: block;
+                margin-bottom: 8px;
+                color: #4a7c6d;
+                font-weight: 600px;
+                font-size: 14px;
+            }
+
+            input{
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 12px;
+                border: 2px solid #d1e2da;
+                border-radius: 10px;
+                box-sizing: border-box;
+                outline: none;
+                transition: border-color 0.3s;
+            }
+
+            input:focus{
+                border-color: #88b4a2;
+            }
+
+            button{
+                width: 100%;
+                padding: 12px;
+                background-color: #2D6A4F;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            button:hover{
+                background-color: #1B4332;
+            }
+
+            #hasil{
+                margin-top: 25px;
+                padding: 15px;
+                border-radius: 10px;
+                text-align: center;
+                min-height: 20px;
+                font-size: 15px;
+                line-height: 1.5;
+            }
+
+            .error{
+                color: red;
+                background-color: rgb(255, 231, 235);
+            }
+
+            .success{
+                color: #1B4332;
+                background-color: #e9f5f0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>Cek Nilai</h2>
+
+            <label for="nim">NIM Mahasiswa</label>
+            <input type="text" id="nim" placeholder="Contoh: 24106311xxxxx">
+
+            <label for="nilai">Nilai (0 - 100)</label>
+            <input type="number" id="nilai" placeholder="Masukkan angka">
+
+            <button onclick="cekNilai()">Cek Nilai Sekarang</button>
+
+            <div id="hasil"></div>
+        </div>
+
+        <script>
+            function cekNilai() {
+                const nim = document.getElementById("nim").value;
+                const nilaiInput = document.getElementById("nilai").value;
+                const hasilDiv = document.getElementById("hasil");
+
+                const nilai = parseFloat(nilaiInput);
+
+                hasilDiv.innerHTML = "";
+                hasilDiv.className = "";
+
+                if (nilaiInput === "" || nilai < 0 || nilai > 100) {
+                    hasilDiv.innerHTML = "Nilai tidak valid!";
+                    hasilDiv.classList.add("error");
+                    return;
+                }
+
+                let hurufMutu= "";
+
+                if (nilai >= 80 && nilai <= 100){
+                    hurufMutu="A";
+                } else if (nilai >= 70){
+                    hurufMutu="B";
+                } else if (nilai >= 60){
+                    hurufMutu="C";
+                } else if (nilai >= 50){
+                    hurufMutu="D";
+                } else {
+                    hurufMutu="E";
+                }
+
+                hasilDiv.classList.add("success");
+                hasilDiv.innerHTML = "NIM: <b>" + nim + "</b><br>Huruf Mutu: <b>" + hurufMutu + "</b>";
+            }
+        </script>
+    </body>
+</html>
