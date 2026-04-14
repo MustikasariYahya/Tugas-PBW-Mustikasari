@@ -40,7 +40,6 @@
         $nominal_diskon = ($diskon_persen / 100) * $ukt;
         $total_bayar = $ukt - $nominal_diskon;
 
-        echo "<h3>Luaran yang diharuskan</h3>";
         echo "NPM : " . ($npm) . "<br>";
         echo "NAMA : " . strtoupper($nama) . "<br>";
         echo "PRODI : " . strtoupper($prodi) . "<br>";
