@@ -14,7 +14,6 @@
 
     <hr> <div id="konten">
         <?php
-        // Cek apakah ada parameter 'page' di URL
         if (isset($_GET['page'])) {
             $page = $_GET['page'];
 

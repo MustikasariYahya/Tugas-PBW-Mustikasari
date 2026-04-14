@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generator Bilangan Genap</title>
     <style>
-        /* Pengaturan dasar halaman */
         body {
             font-family: sans-serif;
             background-color: #f4f4f9;
@@ -15,7 +14,6 @@
             padding: 50px
         }
 
-        /* Container utama (Card) */
         .container {
             background: #ffffff;
             padding: 30px;
@@ -31,7 +29,6 @@
             font-size: 20px;
         }
 
-        /* Styling Form */
         label {
             font-weight: 600;
             color: #555;
@@ -77,14 +74,13 @@
             margin: 25px 0;
         }
 
-        /* Area hasil dari PHP */
         .hasil {
             background-color: #f8f9fa;
             padding: 15px;
             border-radius: 6px;
             border-left: 5px solid #a8fdac;
             line-height: 1.6;
-            word-wrap: break-word; /* Agar deretan angka panjang tidak overflow */
+            word-wrap: break-word; 
         }
     </style>
 </head>

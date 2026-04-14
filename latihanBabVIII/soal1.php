@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jenis Kendaraan</title>
     <style>
-        /* Gaya dasar agar tampilan ke tengah dan bersih */
         body {
             font-family: sans-serif;
             background-color: #f4f4f9;
@@ -15,7 +14,6 @@
             padding: 50px;
         }
 
-        /* Kotak pembungkus form */
         form {
             background: white;
             padding: 20px;
@@ -38,7 +36,7 @@
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            box-sizing: border-box; /* Agar padding tidak merusak lebar */
+            box-sizing: border-box; 
         }
 
         button {
