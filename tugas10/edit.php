@@ -2,7 +2,6 @@
 include 'koneksi.php';
 $id = $_GET['id'];
 
-// Ambil data lama menggunakan Prepared Statement
 $stmt = $conn->prepare("SELECT * FROM produk WHERE id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
