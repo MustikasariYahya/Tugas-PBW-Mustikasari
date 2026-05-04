@@ -1,6 +1,10 @@
 <?php 
-include 'koneksi.php'; 
 session_start();
+if (!isset($_SESSION['login_Un5lk4'])) {
+    header("Location: login.php?message=" . urlencode("Mengakses fitur harus login dulu Ya!"));
+    exit();
+}
+include 'koneksi.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -42,6 +46,11 @@ session_start();
     </style>
 </head>
 <body>
+
+<div style="margin-bottom: 20px; background: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <span>Selamat datang, <b><?= $_SESSION['nama']; ?></b>!</span> 
+    <a href="logout.php" style="margin-left: 15px; color: #e74c3c; text-decoration: none; font-weight: bold;">[ Logout ]</a>
+</div>
 
 <div class="container mt-5">
     <div class="card shadow">

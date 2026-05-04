@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['login_Un5lk4'])) {
+    header("Location: login.php?message=" . urlencode("Mengakses fitur harus login dulu ya!"));
+    exit;
+}
+include 'koneksi.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

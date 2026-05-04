@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['login_Un5lk4'])) {
+    header("Location: login.php?message=" . urlencode("Login dulu ya!"));
+    exit;
+}
+
 include 'koneksi.php';
 $sql = "SELECT * FROM buku";
 $result = $conn->query($sql);
@@ -90,6 +96,11 @@ $result = $conn->query($sql);
     </style>
 <body>
 <h2>Daftar Koleksi Buku</h2>
+
+<div style="margin-bottom: 20px; background: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <span>Selamat datang, <b><?= $_SESSION['nama']; ?></b>!</span> 
+    <a href="logout.php" style="margin-left: 15px; color: #e74c3c; text-decoration: none; font-weight: bold;">[ Logout ]</a>
+</div>
     
     <a href="tambah.php" class="btn-tambah">+ Tambah Buku Baru</a>
 

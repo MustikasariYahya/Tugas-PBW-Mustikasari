@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "toko_db";
+$db   = "db_toko";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
